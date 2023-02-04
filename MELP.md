@@ -60,6 +60,7 @@ In addition to the Raspberry Pi board itself, you will require the following:
 QEMU is a machine emulator. It comes in a number of different flavors, each of which can emulate a processor architecture and a number of boards built using that architecture. For each architecture, QEMU emulates a range of hardware, which you can see by using the -machine help option. Each machine emulates most of the hardware that would normally be found on that board. There are options to link hardware to local resources, such as using a local file for the emulated disk drive.
 
 Here is a concrete example:
+
 > `$ qemu-system-arm -machine vexpress-a9 -m 256M -drive file=rootfs.ext4,sd -net nic -net use -kernel zImage -dtb vexpress-v2p-ca9.dtb -append "console=ttyAMA0,115200 root=/dev/mmcblk0" -serial stdio -net nic,model=lan9118 -net tap,ifname=tap0`
 
 The options used in the preceding command line are as follows:
@@ -74,5 +75,7 @@ The options used in the preceding command line are as follows:
 * `-net tap,ifname=tap0`: Connects the network interface to the virtual network interface, `tap0`.
 
 To configure the host side of the network, you need the tunctl command from the User Mode Linux (UML) project; on Debian and Ubuntu, the package is named `uml-utilites`:
+
 > `$ sudo tunctl -u $(whoami) -t tap0`
+
 This creates a network interface named `tap0` that is connected to the network controller in the emulated QEMU machine. You configure `tap0` in exactly the same way as any other interface.
