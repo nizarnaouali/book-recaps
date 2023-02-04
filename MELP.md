@@ -1,0 +1,6 @@
+## Moving through the project life cycle
+This book is divided into four sections that reflect the phases of a project. The phases are not necessarily sequential. Usually, they overlap and you will need to jump back to revisit things that were done previously. However, they are representative of a developer's preoccupations as the project progresses:
+* _Elements of Embedded Linux_ (Chapters 1 to 8) will help you set up the development environment and create a working platform for the later phases. It is often referred to as the board bring-up phase.
+* _System Architecture and Design Choices_ (Chapters 9 to 15) will help you to look at some of the design decisions you will have to make concerning the storage of programs and data, how to divide work between kernel device drivers and applications, and how to initialize the system.
+* _Writing Embedded Applications_ (Chapters 16 to 18) shows how to package and deploy Python applications, make effective use of the Linux process and thread model, and how to manage memory in a resource-constrained device.
+* _Debugging and Optimizing Performance_ (Chapters 19 to 21) describes how to trace, profile, and debug your code in both the applications and the kernel. The last chapter explains how to design for real-time behavior when required.
